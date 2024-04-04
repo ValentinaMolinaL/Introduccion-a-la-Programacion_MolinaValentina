@@ -1,0 +1,176 @@
+//#########################
+// CONSTRUCCIÓN ALGORITMO CRUD (CREATE,READ,UPDATE Y DELETE)
+//#########################
+Algoritmo ejemploProductos
+	Dimension nombreInventario[100]
+	Dimension precioInventario[100]
+	Dimensionar CantidadProductos1[100]
+	Dimension nombreCliente[100] 
+	Dimension precioCliente[100]
+	Dimension cantidadCliente[100] 
+	Dimensionar CantidadProductos2[100]
+	Dimension cantidadInventario[100]
+	nombreInventario[0] = "Escultura"//Nombre de productos
+	nombreInventario[1] = "Retrato"
+	nombreInventario[2] = "Cuadro"
+	nombreInventario[3] = "Mural"
+	nombreInventario[4] = "Posters"
+	precioInventario[0] = 200//precio de productos
+	precioInventario[1] = 300
+	precioInventario[2] = 400
+	precioInventario[3] = 500
+	precioInventario[4] = 600
+	cantidadInventario[0] = 10//cantidad de productos en el inventario
+	cantidadInventario[1] = 15
+	cantidadInventario[2] = 20
+	cantidadInventario[3] = 10
+	cantidadInventario[4] = 14
+	CantidadProductos1[1]= 0
+	CantidadProductos2[2]= 0
+	nombreCliente[0]= 0
+	nombreCliente[1]= 0
+	nombreCliente[2]= 0
+	nombreCliente[3]= 0
+	nombreCliente[4]= 0
+	precioCliente[0]= 0 
+	precioCliente[1]= 0
+	precioCliente[2]= 0
+	precioCliente[3]= 0
+	precioCliente[4]= 0
+	cantidadCliente[0]= 0
+	cantidadCliente[1]= 0
+	cantidadCliente[2]= 0
+	cantidadCliente[3]= 0
+	cantidadCliente[4]= 0
+	Definir booleano Como Logico
+	booleano = Verdadero
+	Definir arte Como Logico
+	arte=Verdadero
+	cantidadProducto=1
+	Mientras booleano = Verdadero Hacer
+		Escribir "---------------------------------------------"
+		Escribir "        Bienvenido tu Museo Virtual          "
+		Escribir "---------------------------------------------"
+		Escribir "Escoge una de las siguientes opciones para tus compras:"
+		Escribir "1. Comenzar o añadir productos a la compra" 
+		Escribir "2. Quitar productos de la precompra" 
+		Escribir "3. Listar productos de la precompra"
+		Escribir "4. Listar productos de la precompra" 
+		Escribir "0. Finalizar compra."
+		Leer opcionMenu
+		Segun opcionMenu Hacer
+			1:
+				Escribir "----------Menu-----------"
+				Escribir "Cual producto deseas comprar?"
+				Escribir "0.Esculturas"
+				Escribir "1.Retratos"
+				Escribir "2.Cuadros"
+				Escribir "3.Murales"
+				Escribir "4.posters"
+				Leer opcionMenu2
+				segun opcionMenu2 Hacer
+					0:
+						Escribir "Ingresa la cantidad de " nombreInventario[0] " que quieres comprar"
+						Leer re
+						si re>cantidadInventario[0] Entonces
+							Escribir "Lo sentimos no contamos con la cantidad que deseas"
+							precioCliente[0]=precioInventario[0]*re
+							cantidadCliente[0]=re
+						FinSi
+					1:
+						Escribir "Ingresa la cantidad de " nombreInventario[1] " que quieres comprar"
+						Leer rr
+						si rr>cantidadInventario[1] Entonces
+							Escribir "lo sentimos no contamos con la cantidad que deseas"
+							precioCliente[1]=precioInventario[1]*rr
+							cantidadCliente[1]=rr
+						FinSi
+					2:
+						Escribir "Ingresa la cantidad de " nombreInventario[2] " que quieres comprar"
+						Leer rec
+						si rec>cantidadInventario[2] Entonces
+						Escribir "lo sentimos no contamos con la cantidad que deseas"
+							precioCliente[2]=precioInventario[2]*rec
+							cantidadCliente[2]=rec
+						FinSi
+						
+					3:
+						Escribir "ingresa la cantidad de " nombreInventario[3] " que quieres comprar"
+						Leer rm
+						si rm>cantidadInventario[3] Entonces
+							Escribir "lo sentimos no contamos con la cantidad que deseas"
+							precioCliente[3]=precioInventario[3]*rm
+							cantidadCliente[3]=rm
+						FinSi
+						
+					4:
+						Escribir "ingresa la cantidad de " nombreInventario[4] " que quieres comprar"
+						Leer rp
+						si rp>cantidadInventario[4] Entonces
+							Escribir "lo sentimos no contamos con la cantidad que deseas"
+						SiNo
+							Escribir "añadido a tu carrito"
+							precioCliente[4]=precioInventario[4]*rp
+							cantidadCliente[4]=rp
+						FinSi
+				FinSegun
+				
+			2:
+				Si arte=Verdadero Entonces//Eliminar productos de la compra 
+					Escribir '¿Cual producto desea devolver?'
+					Si ProductoCliente=Verdadero Entonces
+						Si cantidadCliente[1]>=1 Entonces
+							Escribir '--------------------------------------------'
+							Escribir 'Producto #1'
+							Escribir 'Nombre:', nombreInventario[0]
+							Escribir 'Cantidad Comprada:',cantidadCliente[0]
+							Escribir '--------------------------------------------"
+						FinSi
+				FinSi
+			
+			3:
+				Escribir   "
+				Escribir "---------------------"
+				Escribir "Productos Disponibles"
+				Escribir "---------------------"
+				Para i=0 Hasta 4 Hacer
+					Escribir "Producto #",i+1,":"
+					Escribir "Nombre:" , nombreInventario[i]
+					Escribir "Precio:" , precioInventario[i]
+					Escribir "Cantidad Disponible:", cantidadInventario[i]
+					Escribir "-------------------------"
+				FinPara
+				Escribir "Quieres continuar en el programa? (si/no) : "
+				Leer programita
+				Si programita == "no" Entonces
+					Escribir "Muchas gracias por utilizar el programa ;) "
+					booleano = Falso
+				FinSi
+			4:
+				Si productosCliente == Falso Entonces
+					Escribir "No tienes ningún producto en tu carrito"
+					Escribir "Quieres continuar en el programa? (si/no) : "
+					Leer programita
+					Si programita == "no" Entonces
+						Escribir "Muchas gracias por utilizar el programa ;) "
+						booleano = Falso
+					FinSi
+				SiNo
+					totalCompra=0
+					Para i=0 Hasta cantidadProductos  Hacer
+						Escribir "============================================"
+						Escribir "Producto #",i+1,":"
+						Escribir "Nombre:" , nombreCliente[i]
+						Escribir "Precio por Unidad:" , precioInventario[i]
+						Escribir "Cantidad Comprada:", cantidadCliente[i]
+						Escribir "Precio Total por Unidades Compradas:" , precioCliente[i]
+						Escribir "============================================"
+						totalCompra=totalCompra+precioCliente[i]
+					FinPara
+					Escribir "Total a Pagar:" , totalCompra
+				FinSi
+		FinSegun
+	FinMientras
+	
+FinAlgoritmo
+//Desarrollado por Pedro Gómez - Trainer CL
